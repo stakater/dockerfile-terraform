@@ -12,12 +12,12 @@ RUN apk --update add make jq python py-pip openssh-client unzip git && \
     rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     mv terraform /bin && \
     wget https://releases.hashicorp.com/terraform-provider-aws/${TERRAFORM_PROVIDER_AWS_VERSION}/terraform-provider-aws_${TERRAFORM_PROVIDER_AWS_VERSION}_linux_amd64.zip && \
-    unzip terraform-provider-aws_${TERRAFORM_PROVIDER_AWS_VERSION}_linux_amd64.zip -d terraform-provider-aws && \
+    unzip terraform-provider-aws_${TERRAFORM_PROVIDER_AWS_VERSION}_linux_amd64.zip && \
     rm terraform-provider-aws_${TERRAFORM_PROVIDER_AWS_VERSION}_linux_amd64.zip && \
-    mv terraform-provider-aws /bin && \
+    mv terraform-provider-aws_v${TERRAFORM_PROVIDER_AWS_VERSION}_x4 /bin && \
     wget https://releases.hashicorp.com/terraform-provider-terraform/${TERRAFORM_PROVIDER_TERRAFORM_VERSION}/terraform-provider-terraform_${TERRAFORM_PROVIDER_TERRAFORM_VERSION}_linux_amd64.zip && \
-    unzip terraform-provider-terraform_${TERRAFORM_PROVIDER_TERRAFORM_VERSION}_linux_amd64.zip -d terraform-provider-terraform && \
+    unzip terraform-provider-terraform_${TERRAFORM_PROVIDER_TERRAFORM_VERSION}_linux_amd64.zip && \
     rm terraform-provider-terraform_${TERRAFORM_PROVIDER_TERRAFORM_VERSION}_linux_amd64.zip && \
-    mv terraform-provider-terraform /bin && \
+    mv terraform-provider-terraform_v${TERRAFORM_PROVIDER_TERRAFORM_VERSION}_x4 /bin && \
     apk --purge -v del py-pip wget unzip && \
     rm -rf /var/cache/apk/*
